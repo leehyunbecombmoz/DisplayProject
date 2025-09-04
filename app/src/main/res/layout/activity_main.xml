@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:padding="@dimen/len_10"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/icon_hospital"
+            android:layout_width="@dimen/len_40"
+            android:layout_height="@dimen/len_40"/>
+
+        <TextView
+            android:id="@+id/tvTitleName"
+            android:layout_marginLeft="@dimen/len_10"
+            android:text="成都市金牛区营门口社区卫生服务中心"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <dz.solc.viewtool.view.marqueeview.MarqueeTextView
+            android:id="@+id/marqueeTextView"
+            android:layout_weight="1"
+            tools:text="温馨提示：现金当面点清，离开窗口概不负责！"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16"
+            android:layout_marginLeft="@dimen/len_40"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_marginRight="@dimen/len_40"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_marginEnd="@dimen/len_10"
+            tools:text="2022年10月10日 10:10:10"
+            android:textColor="@color/white"
+            android:textSize="@dimen/len_14"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/len_20"
+        android:layout_marginRight="@dimen/len_20"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:background="@drawable/dashed_border"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_width="@dimen/len_0"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/icon_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/len_10"
+                android:text="工号：7399233"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_PayView"
+            android:layout_marginLeft="@dimen/len_40"
+            android:background="@drawable/dashed_border"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:weightSum="4"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/len_0"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:paddingStart="@dimen/len_10"
+                tools:listitem="@layout/layout_fee_item"
+                android:id="@+id/listView"
+                android:dividerHeight="@dimen/len_15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_PayView"-->
+<!--            android:layout_marginLeft="@dimen/len_40"-->
+<!--            android:background="@drawable/dashed_border"-->
+<!--            android:layout_weight="3"-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="center"-->
+<!--            android:weightSum="4"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_width="@dimen/len_0"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_weight="1.5"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp">-->
+<!--                <ImageView-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:src="@mipmap/icon_qd"-->
+<!--                    android:layout_width="@dimen/len_100"-->
+<!--                    android:layout_height="@dimen/len_100"/>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_marginLeft="@dimen/len_50"-->
+<!--                    android:layout_marginRight="@dimen/len_50"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:layout_marginTop="@dimen/len_10"-->
+<!--                        android:text="总费用"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="@dimen/font_32"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvAllPrice"-->
+<!--                        android:layout_marginTop="@dimen/len_10"-->
+<!--                        android:text="￥27.0"-->
+<!--                        android:textColor="@color/orange_500"-->
+<!--                        android:textSize="@dimen/font_40"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+
+<!--            <com.google.android.material.divider.MaterialDivider-->
+<!--                app:dividerColor="@color/white_alpha_80"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/len_1"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:gravity="center"-->
+<!--                android:layout_weight="2.5"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_marginLeft="@dimen/len_50"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_marginTop="@dimen/len_10"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <ImageView-->
+<!--                            android:src="@mipmap/icon_qd1"-->
+<!--                            android:layout_width="@dimen/len_40"-->
+<!--                            android:layout_height="@dimen/len_40"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_marginLeft="@dimen/len_10"-->
+<!--                            android:text="现    金"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:textSize="@dimen/font_33"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_gravity="center_horizontal"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_marginTop="@dimen/len_10"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <ImageView-->
+<!--                            android:background="@mipmap/icon_wchat"-->
+<!--                            android:layout_width="@dimen/len_40"-->
+<!--                            android:layout_height="@dimen/len_40"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_marginLeft="@dimen/len_10"-->
+<!--                            android:text="微    信"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:textSize="@dimen/font_33"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_gravity="center_horizontal"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_marginTop="@dimen/len_10"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <ImageView-->
+<!--                            android:background="@mipmap/icon_zfb"-->
+<!--                            android:layout_width="@dimen/len_40"-->
+<!--                            android:layout_height="@dimen/len_40"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_marginLeft="@dimen/len_10"-->
+<!--                            android:text="支付宝"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:textSize="@dimen/font_33"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_gravity="center_horizontal"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"/>-->
+
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+
+<!--                <TextView-->
+<!--                    android:layout_marginLeft="@dimen/len_20"-->
+<!--                    android:text="请告知您的支付方式"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/font_33"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/ll_NormalView"
+            android:layout_marginLeft="@dimen/len_40"
+            android:background="@drawable/dashed_border"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/len_0"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_11"
+                android:layout_width="@dimen/len_130"
+                android:layout_height="@dimen/len_130"/>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_22"
+                android:layout_width="@dimen/len_140"
+                android:layout_height="@dimen/len_140"/>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_qd"
+                android:layout_width="@dimen/len_100"
+                android:layout_height="@dimen/len_100"/>
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_qd"
+                android:layout_width="@dimen/len_100"
+                android:layout_height="@dimen/len_100"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="@dimen/len_10"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivMarkCode"
+            android:layout_gravity="center_vertical"
+            tools:src="@mipmap/qrcode"
+            android:layout_width="@dimen/len_100"
+            android:layout_height="@dimen/len_100"/>
+        <LinearLayout
+            android:layout_marginLeft="@dimen/len_10"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="@dimen/len_10"
+                android:text="扫码关注微信公众号。"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/len_10"
+                android:text="查看就诊信息，在线办理医疗健康服务！"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/len_10"
+                android:text="监督投诉电话：87636546"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
